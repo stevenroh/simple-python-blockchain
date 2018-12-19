@@ -12,3 +12,6 @@ class Block:
         sha = hasher.sha256()
         sha.update(str("%s%s%s%s" % (self.index, self.timestamp, self.data, self.previous_hash)).encode("utf-8"))
         return sha.hexdigest()
+
+    def __str__(self):
+        return str("Block #%s : [HASH = %s] [DATA = %s] [PREVIOUS = %s]" % (self.index, self.hash, self.data, self.previous_hash))
